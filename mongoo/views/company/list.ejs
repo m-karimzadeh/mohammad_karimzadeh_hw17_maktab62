@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list</title>
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+</head>
+<body>
+    <%- include('../includes/header.ejs') %>
+    
+    <section id="container">
+        <h1 class="titlebox">لیست شرکت‌ها</h1>
+        <a class="pageLink" href="/company/create">ثبت رکورد جدید</a>
+        <table class="viewListTable">
+            <tr>
+                <td class="titlebox">نام</td>
+                <td class="titlebox" width="130px">استان</td>
+                <td class="titlebox" width="130px">شهر</td>
+                <td class="titlebox" width="130px">تلفن</td>
+                <td class="titlebox" width="100px">مشاهده</td>
+                <td class="titlebox" width="100px">ویرایش</td>
+                <td class="titlebox" width="100px">حذف</td>
+            </tr>
+            <% for (let i = 0; i < result.length; i++) { %>
+                <tr>
+                    <td><%= result[i].name %></td>
+                    <td><%= result[i].state %></td>
+                    <td><%= result[i].city %></td>
+                    <td><%= result[i].phone %></td>
+                    <td><a class="btnLink" href="/company/view/<%= result[i].id %>">مشاهده</a></td>
+                    <td><a class="btnLink" href="/company/update/<%= result[i].id %>">ویرایش</a></td>
+                    <td><a class="deleteLink" href="/company/delete/<%= result[i].id %>">حذف</a></td>
+                </tr>
+            <% }; %>
+        </table>
+    </section>
+</body>
+</html>

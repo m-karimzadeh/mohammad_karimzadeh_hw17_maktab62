@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+</head>
+<body>
+    <%- include('../includes/header.ejs') %>
+
+    <section id="container">
+        <h1 class="titlebox">پروفایل کارمند</h1>
+        <table class="viewTable">
+            <tr>
+                <td class="titlebox" width="220px">نام</td>
+                <td><%= result.firstName %></td>
+            </tr>
+            <tr>
+                <td class="titlebox">نام خانوادگی</td>
+                <td><%= result.lastName %></td>
+            </tr>
+            <tr>
+                <td class="titlebox">کد ملی</td>
+                <td><%= result.national_code %></td>
+            </tr>
+            <tr>
+                <td class="titlebox">جنسیت</td>
+                <td><%= result.sex %></td>
+            </tr>
+            <tr>
+                <td class="titlebox">تاریخ تولد</td>
+                <td><%= result.birthdate %></td>
+            </tr>
+            <tr>
+                <td class="titlebox">مدیر است؟</td>
+                <td><%= (result.manager) ? 'بله' : 'خیر' %></td>
+            </tr>
+            <tr>
+                <td class="titlebox">شرکت</td>
+                <td><%= result.company.name %></td>
+            </tr>
+        </table>
+    </section>
+</body>
+</html>

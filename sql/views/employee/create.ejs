@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+</head>
+<body>
+    <%- include('../includes/header.ejs') %>
+    
+    <section id="container">
+        <h1 class="titlebox">ثبت کارمند</h1>
+        <form action="" method="POST">
+            <table class="viewTable">
+                <tr>
+                    <td class="titlebox" width="200px">نام</td>
+                    <td><input name="firstName"></td>
+                </tr>
+                <tr>
+                    <td class="titlebox" width="200px">نام خانوادگی</td>
+                    <td><input name="lastName"></td>
+                </tr>
+                <tr>
+                    <td class="titlebox">کد ملی</td>
+                    <td><input name="national_code"></td>
+                </tr>
+                <tr>
+                    <td class="titlebox">جنسیت</td>
+                    <td>
+                        <select name="sex">
+                            <option value="مرد">مرد</option>
+                            <option value="زن">زن</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="titlebox">مدیر است؟</td>
+                    <td>
+                        <select name="manager">
+                            <option value="0">خیر</option>
+                            <option value="1">بله</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="titlebox">تاریخ تولد</td>
+                    <td><input name="birthdate"></td>
+                </tr>
+            </table>
+
+            <button class="btnLink" type="submit">ثبت اطلاعات</button>
+        </form>
+    </section>
+</body>
+</html>

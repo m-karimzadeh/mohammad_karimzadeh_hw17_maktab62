@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+</head>
+<body>
+    <%- include('../includes/header.ejs') %>
+    
+    <section id="container">
+        <h1 class="titlebox">پروفایل شرکت</h1>
+        <form action="" method="POST">
+            <table class="viewTable">
+                <tr>
+                    <td class="titlebox" width="200px">نام</td>
+                    <td><input name="name" value="<%= result.name %>"></td>
+                </tr>
+                <tr>
+                    <td class="titlebox">استان</td>
+                    <td><input name="state" value="<%= result.state %>"></td>
+                </tr>
+                <tr>
+                    <td class="titlebox">شهر</td>
+                    <td><input name="city" value="<%= result.city %>"></td>
+                </tr>
+                <tr>
+                    <td class="titlebox">تلفن</td>
+                    <td><input name="phone" value="<%= result.phone %>"></td>
+                </tr>
+                <tr>
+                    <td class="titlebox">شماره ثبت</td>
+                    <td><input name="registration_number" value="<%= result.registration_number %>"></td>
+                </tr>
+                <tr>
+                    <td class="titlebox">تاریخ ثبت</td>
+                    <td><input name="registration_date" value="<%= result.registration_date %>"></td>
+                </tr>
+            </table>
+
+            <button class="btnLink" type="submit">ثبت اطلاعات</button>
+        </form>
+    </section>
+</body>
+</html>

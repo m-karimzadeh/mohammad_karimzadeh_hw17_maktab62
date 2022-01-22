@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list</title>
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+</head>
+<body>
+    <%- include('../includes/header.ejs') %>
+    
+    <section id="container">
+        <h2 class="titlebox">لیست کارمندان</h2>
+        
+        <table class="viewListTable">
+            <tr>
+                <td class="titlebox">نام و نام خانوادگی</td>
+                <td class="titlebox" width="130px">شماره ملی</td>
+                <td class="titlebox" width="130px">جنسیت</td>
+                <td class="titlebox" width="130px">تاریخ تولد</td>
+                <td class="titlebox" width="100px">مشاهده</td>
+                <td class="titlebox" width="100px">ویرایش</td>
+                <td class="titlebox" width="100px">حذف</td>
+            </tr>
+            <% for (let i = 0; i < employee.length; i++) { %>
+                <tr>
+                    <td><%= employee[i].firstName %></td>
+                    <td><%= employee[i].lastName %></td>
+                    <td><%= employee[i].sex %></td>
+                    <td><%= employee[i].birthdate %></td>
+                    <td><a class="btnLink" href="/employee/view/<%= employee[i].id %>">مشاهده</a></td>
+                    <td><a class="btnLink" href="/employee/update/<%= employee[i].id %>">ویرایش</a></td>
+                    <td><a class="deleteLink" href="/employee/delete/<%= employee[i].id %>">حذف</a></td>
+                </tr>
+            <% }; %>
+        </table>
+    </section>
+</body>
+</html>
